@@ -1,6 +1,6 @@
 # Dashboard de ETFs
 
-Este repositório contém um script em Python para montar um painel técnico diário de ETFs listados na B3, com foco em ativos como KDIF11, GOLD11, WRLD11, JURO11, FIXA11 e USDB11.
+Este repositório contém um script em Python para montar um painel técnico diário de ETFs negociados na B3, com foco em ativos como KDIF11, GOLD11, WRLD11, JURO11, FIXA11 e USDB11.
 
 O projeto baixa dados de mercado, calcula sinais técnicos básicos e gera um relatório em HTML com uma visão rápida do cenário atual de cada ativo.
 
@@ -36,8 +36,8 @@ Esse comando:
 
 - baixa os dados
 - calcula os sinais técnicos
-- gera um arquivo HTML com o painel
-- tenta abrir o relatório automaticamente no navegador
+- gera um relatório em HTML com o painel
+- tenta abrir o resultado automaticamente no navegador
 
 ### Análise de correlação
 
@@ -50,6 +50,19 @@ Para exibir os gráficos de correlação em tela, use:
 ```bash
 python dashboard_assets.py --corr --show
 ```
+
+## Arquivos gerados
+
+O script cria uma pasta com o padrão DD-MM-AAAA_HH-MM-SS para cada execução e salva os arquivos dentro dela. Os principais resultados são:
+
+- painel_etfs.html
+- asset_correlation.png
+- rolling_asset_correlation.png
+
+Exemplos de saídas podem ser encontrados no repositório em pastas com datas, como:
+
+- 08-07-2026_09-00-00/painel_etfs.html
+- 08-07-2026_10-57-30/painel_etfs.html
 
 ## Fontes de dados
 
@@ -72,17 +85,6 @@ No Windows, use:
 ```bash
 set BRAPI_TOKEN=seu_token
 ```
-
-## Arquivos gerados
-
-O script cria relatórios em HTML e, quando a opção de correlação é usada, também gera imagens de heatmap e correlação móvel.
-
-Exemplos de saídas podem ser encontrados no repositório em pastas com datas, como:
-
-- 02-07-2026/dashboard_assets.html
-- 03-07-2026/dashboard_assets.html
-- 06-07-2026/dashboard_assets.html
-- 07-07-2026/dashboard_assets.html
 
 ## Aviso importante
 
